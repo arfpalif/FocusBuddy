@@ -1,0 +1,11 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Lapisan background biru dengan corner radius -->
+    <item>
+        <shape>
+            <solid android:color="@color/green" /> <!-- Warna biru -->
+            <corners android:radius="12dp" />  <!-- Radius sudut -->
+        </shape>
+    </item>
+
+</selector>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentIntro1">
+
+    <fragment
+        android:id="@+id/fragmenIntro3"
+        android:name="com.example.focusbuddy.ui.intro.FragmentIntro3"
+        android:label="fragment_intro3"
+        tools:layout="@layout/fragment_intro3" >
+        <action
+            android:id="@+id/action_fragmenIntro3_to_fragmentIntro4"
+            app:destination="@id/fragmentIntro4" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentIntro1"
+        android:name="com.example.focusbuddy.ui.intro.FragmentIntro1"
+        android:label="fragment_intro1"
+        tools:layout="@layout/fragment_intro1" >
+        <action
+            android:id="@+id/action_fragmentIntro1_to_fragmentIntro2"
+            app:destination="@id/fragmentIntro2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentIntro2"
+        android:name="com.example.focusbuddy.ui.intro.FragmentIntro2"
+        android:label="fragment_intro2"
+        tools:layout="@layout/fragment_intro2" >
+        <action
+            android:id="@+id/action_fragmentIntro2_to_fragmenIntro3"
+            app:destination="@id/fragmenIntro3" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentIntro4"
+        android:name="com.example.focusbuddy.ui.intro.FragmentIntro4"
+        android:label="fragment_intro4"
+        tools:layout="@layout/fragment_intro4" >
+        <action
+            android:id="@+id/action_fragmentIntro4_to_chooseApps"
+            app:destination="@id/chooseApps" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseApps"
+        android:name="com.example.focusbuddy.ui.intro.chooseApps"
+        android:label="chooseApps" >
+        <action
+            android:id="@+id/action_chooseApps_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.focusbuddy.ui.intro.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.focusbuddy.MainActivity"
+        android:label="MainActivity" />
+</navigation>

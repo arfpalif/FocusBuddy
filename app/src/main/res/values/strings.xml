@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Focus Buddy</string>
+    <string name="accessibility_description">Layanan ini digunakan untuk memblokir akses ke aplikasi Instagram.</string>
+    <string name="invalid_email_error">email tidak valid</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="identitas">Masukkan identitas kamu</string>
+    <string name="tracking">Mari kita mentracking penggunaan media sosial mu sehari hari</string>
+    <string name="perkiraan">Berapa lama kamu menggunakan media sosial setiap harinya ? *perkiraan dalam jam</string>
+    <string name="alasan">Kenapa kamu ingin membuka media sosial ?</string>
+    <string name="distrub">Apakah kamu terganggu dengan penggunaan media sosialmu saat ini ?</string>
+    <string name="alasanGanggu">Alasan memilih pilihan diatas?</string>
+    <string name="limit">Kamu lebih menyukai pembatasan seperti apa ?</string>
+    <string name="lamaWaktu">Berapa lama kamu ingin membatasi media sosial setiap harinya ?</string>
+</resources>
