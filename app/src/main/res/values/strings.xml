@@ -16,4 +16,5 @@
     <string name="alasanGanggu">Alasan memilih pilihan diatas?</string>
     <string name="limit">Kamu lebih menyukai pembatasan seperti apa ?</string>
     <string name="lamaWaktu">Berapa lama kamu ingin membatasi media sosial setiap harinya ?</string>
+    <string name="title_activity_home2">HomeActivity2</string>
 </resources>

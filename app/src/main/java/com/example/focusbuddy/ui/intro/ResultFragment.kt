@@ -11,6 +11,9 @@ import com.example.focusbuddy.R
 import com.example.focusbuddy.data.model.QuickSetupViewModel
 import com.example.focusbuddy.data.model.saveFirestore
 import com.example.focusbuddy.databinding.FragmentResultBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.firestore
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +31,7 @@ class ResultFragment : Fragment() {
     private var param2: String? = null
     private lateinit var binding: FragmentResultBinding
     private val viewModel: QuickSetupViewModel by activityViewModels()
+    private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,23 +52,25 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentResultBinding.bind(view)
+        val waktu = viewModel.waktuPenggunaan
+        val hasil = when {
+            waktu >= 4 -> "Berat"
+            waktu >= 2 -> "Moderat"
+            else -> "Ringan"
+        }
+        viewModel.hasilAkhir = hasil
+
+        binding.tipikalPengguna.text = "Kamu adalah tipikal pengguna ${viewModel.hasilAkhir} Mode yang cocok untukmu adalah ${viewModel.modePengawasan} dengan waktu pembatasan ${viewModel.waktuPembatasan} menit"
+
 
         binding.loginButton.setOnClickListener {
-            val waktu = viewModel.waktuPenggunaan
-            val hasil = when {
-                waktu >= 4 -> "Berat"
-                waktu >= 2 -> "Moderat"
-                else -> "Ringan"
-            }
 
-            viewModel.hasilAkhir = hasil
             saveFirestore(viewModel)
-            findNavController().navigate(R.id.action_resultFragment_to_mainActivity)
-
+            findNavController().navigate(R.id.action_resultFragment_to_homeActivity)
         }
 
 
-        binding.tipikalPengguna.text = "Kamu adalah tipikal pengguna ${viewModel.hasilAkhir} Mode yang cocok untukmu adalah ${viewModel.modePengawasan} dengan waktu pembatasan ${viewModel.modePengawasan} menit"
+
     }
 
 

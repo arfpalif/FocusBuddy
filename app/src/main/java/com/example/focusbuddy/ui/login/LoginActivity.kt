@@ -38,22 +38,12 @@ class LoginActivity : AppCompatActivity() {
         val fullText = "Tidak memiliki akun ? Daftar"
         val spannableString = SpannableString(fullText)
 
-        val clickableSpan = object : ClickableSpan() {
-            override fun onClick(widget: View) {
-                startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
-            }
-
-            override fun updateDrawState(ds: TextPaint) {
-                super.updateDrawState(ds)
-                ds.isUnderlineText = true
-                ds.color = Color.BLUE
-            }
+        binding.signUpTextView.setOnClickListener{
+            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
-
         val startIndex = fullText.indexOf("Daftar")
         val endIndex = startIndex + "Daftar".length
 
-        spannableString.setSpan(clickableSpan, startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         auth = FirebaseAuth.getInstance()
         binding.loginButton.setOnClickListener {
             auth.signInWithEmailAndPassword(
@@ -61,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
                 binding.edLoginPassword.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                    startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
                 } else {
                     Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                 }
@@ -78,8 +68,9 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser != null){
-            startActivity(Intent(this@LoginActivity, SetupActivity::class.java))
+            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
         }
+
     }
 
 

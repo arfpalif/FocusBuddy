@@ -66,7 +66,6 @@ class chooseApps : Fragment() {
         recyclerView.adapter = adapter
 
         view.findViewById<Button>(R.id.loginButton).setOnClickListener {
-            // Handle selected apps, e.g., send to next screen or save
             selectedApps.forEach {
                 Log.d("SelectedApp", it.name)
             }

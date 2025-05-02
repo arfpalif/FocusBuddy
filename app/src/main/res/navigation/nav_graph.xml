@@ -30,7 +30,11 @@
         tools:layout="@layout/fragment_intro2" >
         <action
             android:id="@+id/action_fragmentIntro2_to_fragmenIntro3"
-            app:destination="@id/fragmenIntro3" />
+            app:destination="@id/fragmenIntro3"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/fragmentIntro4"
@@ -55,11 +59,12 @@
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action
-            android:id="@+id/action_resultFragment_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            android:id="@+id/action_resultFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
     </fragment>
     <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.focusbuddy.MainActivity"
-        android:label="MainActivity" />
+        android:id="@+id/homeActivity"
+        android:name="com.example.focusbuddy.ui.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
 </navigation>
