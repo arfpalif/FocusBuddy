@@ -40,15 +40,6 @@
             android:layout_height="202dp"
             android:src="@drawable/ic_disturb" />
 
-        <TextView
-            android:id="@+id/textView2"
-            style="@style/Body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="tipikal pengguna"
-            android:textSize="20sp" />
-
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"

@@ -1,8 +1,10 @@
 package com.example.focusbuddy.data.model
 
 import androidx.lifecycle.ViewModel
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
 
 class QuickSetupViewModel : ViewModel() {
     var hasilAkhir: String = ""
@@ -18,11 +20,12 @@ class QuickSetupViewModel : ViewModel() {
 }
 
 fun saveFirestore(viewModel: QuickSetupViewModel){
-    val db = FirebaseFirestore.getInstance()
+    val db = Firebase.firestore
     val uid = FirebaseAuth.getInstance().currentUser?.uid
 
     if (uid==null){
         println("user not logged")
+        return
     }
 
     val data = hashMapOf(
@@ -37,7 +40,8 @@ fun saveFirestore(viewModel: QuickSetupViewModel){
         "waktuPembatasan" to viewModel.waktuPembatasan,
     )
 
-    db.collection("quickSetup").document(uid!!)
+    db.collection("quickSetup")
+        .document(uid)
         .set(data)
         .addOnSuccessListener {
             println("data saved")

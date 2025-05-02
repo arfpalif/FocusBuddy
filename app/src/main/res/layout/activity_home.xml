@@ -8,40 +8,113 @@
     tools:context=".ui.HomeActivity">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/homeContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Judul -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/textContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/user"
+                        style="@style/Body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hi, User"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_history"
+                    android:contentDescription="Profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+
         <TextView
             android:id="@+id/totalUsageTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total penggunaan Medsos"
-            android:textSize="25sp"
-            style="@style/Heading1"
-            android:layout_marginBottom="8dp" />
+            android:text="Total penggunaan Media sosial"
+            android:textSize="20sp"
+            style="@style/Body"/>
 
         <!-- Total waktu -->
         <TextView
             android:id="@+id/totalUsageTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1j 12m"
-            android:textSize="18sp"
-            style="@style/Body"
+            android:text="Total penggunaan medsos"
+            android:textSize="25sp"
+            style="@style/Heading1"
             android:layout_marginBottom="16dp" />
 
         <!-- PieChart View -->
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
 
+        <TextView
+            android:layout_marginTop="8dp"
+        android:id="@+id/statistikMedsos2"
+        style="@style/Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Statistik penggunaan media sosial"
+        android:textSize="20sp" />
 
-        <!-- Keterangan aplikasi (bisa pakai RecyclerView atau LinearLayout biasa) -->
+        <TextView
+            android:id="@+id/emptyStateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum ada data penggunaan aplikasi"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/pieChart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- PERBAIKAN PADA RECYCLERVIEW -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_apps"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:background="#F5F5F5"
+            android:overScrollMode="never"
+            android:visibility="visible"
+            tools:listitem="@layout/item_app_use" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
