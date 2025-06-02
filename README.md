@@ -26,8 +26,16 @@ FocusBuddy is an Android application designed to help users manage their focus a
 4. Users can view their usage stats on the dashboard.
 
 ## Screenshots
+![OnBoarding](https://github.com/user-attachments/assets/e696a2e3-cf1d-4744-a03a-60ad0048683f)
+![Login - inactive](https://github.com/user-attachments/assets/fa6c5ac4-3c8d-4c59-98fa-9cbb0db5aaf0)
+![Home](https://github.com/user-attachments/assets/4c32e990-6eff-47cd-a94e-b33bb753ca97)
+![Sign Up - active](https://github.com/user-attachments/assets/1b1277e0-8b2e-4338-9a51-2f4be8453169)
+![Quick setup - 7](https://github.com/user-attachments/assets/4817bb9f-8eb7-48ea-b317-0e750d76e32f)
+![Quick setup - 4](https://github.com/user-attachments/assets/3582f071-0a5f-4171-8896-13a4751c4690)
+![Quick setup - 3](https://github.com/user-attachments/assets/3225f951-4915-4f4f-afdc-07d9e5734744)
+![Quick setup - 2](https://github.com/user-attachments/assets/48e04a30-4b8d-4669-aebd-ca095eec2103)
+![Quick setup - 1](https://github.com/user-attachments/assets/e7ac80bf-35a5-437f-876e-3ed2cb672efe)
 
-(Insert screenshots or mockups here)
 
 ## Installation
 
